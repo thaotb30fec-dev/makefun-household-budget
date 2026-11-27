@@ -1,0 +1,176 @@
+/* HomeBudget — clean, responsive, no external assets. */
+:root {
+  --ink: #0f172a;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --card: #ffffff;
+  --bg: #f1f5f9;
+  --green: #16a34a;
+  --red: #dc2626;
+  --amber: #d97706;
+  --blue: #2563eb;
+  --radius: 12px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+a { color: var(--blue); }
+.muted { color: var(--muted); }
+.income { color: var(--green); }
+.expense { color: var(--red); }
+.big { font-size: 1.4rem; margin: 0.2rem 0; }
+.mt { margin-top: 1.2rem; }
+
+.site-head {
+  background: var(--ink);
+  color: #fff;
+  padding: 0.9rem 1rem;
+}
+.site-head-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 1.2rem;
+}
+.brand { font-size: 1.35rem; font-weight: 800; color: #fff; text-decoration: none; }
+.brand span { color: #4ade80; }
+.tagline { color: #cbd5e1; font-size: 0.9rem; }
+.topnav { display: flex; flex-wrap: wrap; gap: 0.25rem; margin-left: auto; }
+.topnav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+.topnav a:hover { background: #1e293b; }
+.topnav a.active { background: var(--green); color: #fff; }
+
+main { max-width: 1080px; margin: 0 auto; padding: 1rem; }
+.page-head h1 { margin: 0.2rem 0 0.1rem; font-size: 1.6rem; }
+.page-head p { margin: 0 0 1rem; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  margin-bottom: 1rem;
+}
+.card h2 { margin: 0 0 0.7rem; font-size: 1.1rem; }
+.stat-label { display: block; color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.stat strong { display: block; font-size: 1.7rem; margin: 0.15rem 0; }
+.stat-sub { color: var(--muted); font-size: 0.85rem; }
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+}
+.chart { width: 100%; display: block; }
+.chart.tall { height: 260px; }
+.legend { list-style: none; margin: 0.6rem 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0.25rem 1rem; }
+.legend li { font-size: 0.92rem; }
+.legend strong { float: right; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 0.35rem; }
+.swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; }
+
+.bar { height: 10px; background: #e2e8f0; border-radius: 6px; overflow: hidden; margin: 0.35rem 0; }
+.fill { height: 100%; background: var(--green); border-radius: 6px; }
+.fill.warn { background: var(--amber); }
+.fill.over { background: var(--red); }
+.fill.good { background: var(--green); }
+.budget-row { margin-bottom: 0.9rem; }
+.budget-head { display: flex; justify-content: space-between; gap: 0.5rem; font-weight: 600; }
+.budget-sub { color: var(--muted); font-size: 0.85rem; }
+.budget-edit { border-bottom: 1px solid var(--line); padding-bottom: 0.8rem; margin-bottom: 0.8rem; }
+.budget-edit:last-child { border-bottom: 0; }
+.budget-form { display: flex; gap: 0.5rem; align-items: end; flex-wrap: wrap; }
+.budget-form label { font-size: 0.9rem; }
+.budget-form input { width: 9rem; }
+
+table.tx { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+table.tx th, table.tx td { text-align: left; padding: 0.45rem 0.3rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.tx th { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.num { text-align: right; white-space: nowrap; }
+.actions { white-space: nowrap; }
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--line);
+  background: #fff;
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 0.45rem 0.9rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn:hover { background: #f8fafc; }
+.btn.primary { background: var(--green); border-color: var(--green); color: #fff; }
+.btn.primary:hover { background: #15803d; }
+.btn.danger { color: var(--red); }
+.btn.small { padding: 0.25rem 0.6rem; font-size: 0.85rem; }
+
+.form h3 { margin-top: 0; }
+.form-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+.form-grid label { display: block; font-size: 0.9rem; font-weight: 600; }
+.form-grid input, .form-grid select, .filters input, .filters select, .goal-form input {
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+}
+.form-actions { margin-top: 0.8rem; display: flex; gap: 0.5rem; }
+.form-msg { color: var(--green); min-height: 1.2em; margin: 0.4rem 0 0; }
+
+.filters { display: flex; gap: 0.7rem; align-items: end; flex-wrap: wrap; }
+.filters label { font-size: 0.9rem; font-weight: 600; }
+.filters input, .filters select { width: 11rem; }
+.goal-form { display: flex; gap: 0.5rem; align-items: end; flex-wrap: wrap; margin-top: 0.6rem; }
+.goal-form label { font-size: 0.9rem; }
+.goal-form input { width: 8rem; }
+
+.insights li { margin-bottom: 0.5rem; }
+
+.site-foot {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.linklike { background: none; border: 0; color: var(--blue); cursor: pointer; font-size: 0.9rem; padding: 0; text-decoration: underline; }
+
+@media (max-width: 760px) {
+  .cards { grid-template-columns: 1fr 1fr; }
+  .grid-2 { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr 1fr; }
+  .topnav { margin-left: 0; }
+  table.tx th:nth-child(5), table.tx td:nth-child(5) { display: none; }
+  .stat strong { font-size: 1.35rem; }
+}
+@media (max-width: 480px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .filters input, .filters select { width: 100%; }
+}
