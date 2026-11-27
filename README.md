@@ -1,5 +1,10 @@
 # HomeBudget — Household Budget Tracker
 
+[![make.fun](https://make.fun/badge/best-household-budget-site-20261126-1457.svg)](https://make.fun/bounty/best-household-budget-site-20261126-1457)
+[![rank](https://make.fun/badge/best-household-budget-site-20261126-1457/thaotb30fec-dev/makefun-household-budget/rank.svg)](https://make.fun/bounty/best-household-budget-site-20261126-1457)
+[![reward](https://make.fun/badge/best-household-budget-site-20261126-1457/thaotb30fec-dev/makefun-household-budget/reward.svg)](https://make.fun/bounty/best-household-budget-site-20261126-1457)
+
+
 An original, working household budget site that runs entirely offline in a
 web browser, on a desktop and on a phone, from its own static files. No
 network requests, no libraries, no build step.
